@@ -1,25 +1,52 @@
 <template>
   <div id="nav" v-if="$store.state.user">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <button @click="$store.dispatch('logout')">Logout</button>
+    <header class="bg-white shadow h-16 flex justify-between items-stretch">
+      <router-link
+        :to="{ name: 'home' }"
+        class="inline-flex items-center h-full px-5 text-orange-500 font-bold"
+      >
+        Home
+      </router-link>
+      <div class="flex items-center gap-1">
+        <router-link
+          :to="{ name: 'byName' }"
+          class="inline-flex items-center px-2 h-full transition-colors hover:bg-orange-500 hover:text-white"
+        >
+          Search Meals
+        </router-link>
+        <router-link
+          :to="{ name: 'byLetter' }"
+          class="inline-flex items-center px-2 h-full transition-colors hover:bg-orange-500 hover:text-white"
+        >
+          Meals By Letter
+        </router-link>
+        <router-link
+          :to="{ name: 'ingredients' }"
+          class="inline-flex items-center px-2 h-full transition-colors hover:bg-orange-500 hover:text-white"
+        >
+          Meals By Ingredients
+        </router-link>
+        <button @click="$store.dispatch('logout')">Logout</button>
+      </div>
+    </header>
   </div>
-  <router-view/>
+
+  <router-view />
 </template>
 
 <script>
-import { onBeforeMount } from 'vue'
-import { useStore } from 'vuex'
+import { onBeforeMount } from "vue";
+import { useStore } from "vuex";
 
 export default {
   setup() {
-    const store = useStore()
+    const store = useStore();
 
     onBeforeMount(() => {
-      store.dispatch('fetchUser')
-    })
-  }
-}
+      store.dispatch("fetchUser");
+    });
+  },
+};
 </script>
 
 <style>
