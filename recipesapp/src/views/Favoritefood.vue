@@ -4,7 +4,7 @@
 <form @submit.prevent="save">
 <div class="form-group">
   <label>Name </label>
-  <input type="text" v-model="foods.name" class="form-control"  placeholder="Name">
+  <input type="text" v-model="foods.name" class="form-control "  placeholder="Name">
  
 </div>
 <div class="form-group">
@@ -13,13 +13,13 @@
  
 </div>
 
-<button type="submit" class="btn btn-primary">Save</button>
+<button type="submit" class="btn btn-outline-danger">Save</button>
 
 </form>
 
 
     <h2>Food View</h2>
-    <table class="table table-dark">
+    <table class="table table-bordered border-danger">
 <thead>
   <tr>
     <th scope="col">ID</th>
@@ -35,8 +35,8 @@
         <td>{{ foods.name }}</td>
         <td>{{ foods.favoritefood }}</td>
         <td>
-          <button type="button" class="btn btn-warning" @click="edit(foods)">Edit</button>
-          <button type="button" class="btn btn-danger"  @click="remove(foods)">Delete</button>
+          <button type="button" class="btn btn-outline-primary" @click="edit(foods)">Edit</button>
+          <button type="button" class="btn btn-outline-danger"  @click="remove(foods)">Delete</button>
         </td>
       </tr>
   
@@ -47,10 +47,11 @@
 </template>
 
 <script>
-  import Vue from 'vue';
+  // import Vue from 'vue';
+
   import axios from 'axios';
 
-   Vue.use(axios)
+  // Vue.use(axios)
 
 
 export default {
@@ -61,9 +62,7 @@ export default {
       foods:{
                  _id: '',
                  name: '',
-                 favoritefood: '',
-
-
+                 favoritefood: ''
       }
     }
   },
@@ -88,11 +87,6 @@ export default {
                 );
          },
          
-         
-
-
-
-
          save()
          {
           if(this.foods._id == '')
@@ -128,7 +122,7 @@ export default {
             .then(
               ({data})=>{
                 this.foods.name = '';
-                this.foods.favoritefood = '',
+                this.foods.favoritefood = ''
                 this.id = ''
                 alert("Updated!!!");
                 this.FoodsLoad();

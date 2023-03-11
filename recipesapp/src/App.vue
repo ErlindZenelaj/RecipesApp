@@ -32,11 +32,11 @@
         </router-link>
 
         <router-link
-        :to="{ name: 'favoritefood' }"
+        :to="{ name: 'Favoritefood' }"
         class="inline-flex items-center px-4 h-full transition-colors hover:bg-orange-400 hover:text-white"
         >
         Favoritefood
-        </router-link>
+      </router-link>
 
     
 
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+
 import { onBeforeMount } from "vue";
 import { useStore } from "vuex";
 

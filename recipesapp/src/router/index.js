@@ -7,13 +7,14 @@ import MealsByLetter from "../views/MealsByLetter.vue";
 import MealsByName from "../views/MealsByName.vue";
 import MealDetails from "../views/MealDetails.vue";
 import Ingredients from "../views/Ingredients.vue";
-// import Favoritefood from "../views/Favoritefood.vue";
 import { auth } from '../firebase'
+
 
 
 
 const routes = [
   {
+    
     path: "/",
     component: DefaultLayout,
     children: [
@@ -66,8 +67,8 @@ const routes = [
         }
       },
       {
-        path: "/",
-        name: "favoritefood",
+        path: "/favoritefood",
+        name: "Favoritefood",
         component: () => import('../views/Favoritefood.vue'),
         meta: {
           requiresAuth: true
@@ -86,6 +87,7 @@ const routes = [
     component: GuestLayout,
   },
 ];
+
 
 const router = createRouter({
   history: createWebHistory(),

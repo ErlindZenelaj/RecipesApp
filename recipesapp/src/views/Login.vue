@@ -77,11 +77,11 @@ form {
 
 form.register {
 	color: #FFF;
-	background-color: rgb(245, 66, 101);
+	background-color: #fd7e14;
 	background-image: linear-gradient(
 		to bottom right,
-		rgb(245, 66, 101) 0%,
-		rgb(189, 28, 60) 100%
+		#fd7e14,
+		#fd7e14,
 	);
 }
 
@@ -130,7 +130,7 @@ form.login input:not([type="submit"]) {
 }
 
 form.login input[type="submit"] {
-	background-color: rgb(245, 66, 101);
+	background-color: #fd7e14;
 	color: #FFF;
 	font-weight: 700;
 	padding: 1rem 2rem;
@@ -141,7 +141,7 @@ form.login input[type="submit"] {
 
 form.register input[type="submit"] {
 	background-color: #FFF;
-	color: rgb(245, 66, 101);
+	color: #fd7e14;
 	font-weight: 700;
 	padding: 1rem 2rem;
 	border-radius: 0.5rem;
