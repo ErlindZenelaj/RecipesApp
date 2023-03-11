@@ -7,7 +7,9 @@ import MealsByLetter from "../views/MealsByLetter.vue";
 import MealsByName from "../views/MealsByName.vue";
 import MealDetails from "../views/MealDetails.vue";
 import Ingredients from "../views/Ingredients.vue";
+// import Favoritefood from "../views/Favoritefood.vue";
 import { auth } from '../firebase'
+
 
 
 const routes = [
@@ -64,12 +66,21 @@ const routes = [
         }
       },
       {
+        path: "/",
+        name: "favoritefood",
+        component: () => import('../views/Favoritefood.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      },
+      {
         path: "/login",
         name: "Login",
         component: () => import('../views/Login.vue')
       },
     ],
   },
+  
   {
     path: "/guest",
     component: GuestLayout,
