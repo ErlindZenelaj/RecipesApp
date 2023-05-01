@@ -3,6 +3,7 @@ var server = express();
 var routes = require('./routes/routes.js');
 var mongoose = require('mongoose');
 const cors = require('cors');
+mongoose.set('strictQuery', true)
 mongoose.connect("mongodb://localhost:27017/est",{useNewUrlParser: true,  useUnifiedTopology: true },function checkDB(error)
 {
     if(error)
